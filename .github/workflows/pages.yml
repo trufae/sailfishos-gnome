@@ -2,7 +2,9 @@ name: Website
 on:
   push:
     branches: [main]
-    paths: ['site/**', '.github/workflows/pages.yml']
+    paths: ['site/**', '.github/site-check.mjs', '.github/workflows/pages.yml']
+  pull_request:
+    paths: ['site/**', '.github/site-check.mjs', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -12,16 +14,31 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Check desktop, mobile and release downloads
+        run: node .github/site-check.mjs
+      - uses: actions/upload-artifact@v7
+        with:
+          name: website-preview
+          path: site-preview/*.png
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          path: site
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
     runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v7
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: site
       - uses: actions/deploy-pages@v4
         id: deployment
