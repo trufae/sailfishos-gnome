@@ -4,6 +4,9 @@ Reusable GTK4 and libadwaita packages for **Sailfish OS 5.1.0.11 / aarch64**.
 Build the missing libraries once, then share them between apps and CI jobs.
 [Parla](https://github.com/trufae/parla) is the first consumer.
 
+[Website](https://trufae.github.io/sailfishos-gnome/) ·
+[Releases](https://github.com/trufae/sailfishos-gnome/releases)
+
 ## What is included
 
 | Component | Version |
@@ -46,7 +49,7 @@ file for consuming CI jobs. Build logs contain compiler cache statistics.
 All upstream source downloads are pinned in `sources.lock` and verified
 before use. The corresponding-source archive includes the original source
 tarballs, RPM recipe, build scripts, Vala bindings and source checksums.
-Each RPM carries the upstream license texts. Packaging scripts are covered
+The runtime RPM carries the upstream license texts. Packaging scripts are covered
 by the root `COPYING`; library sources retain their upstream licenses.
 
 ## Install a release
