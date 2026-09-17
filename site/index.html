@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b26">
+  <meta name="description" content="Shared GTK4 and libadwaita packages for Sailfish OS. Meet Parla, download the runtime, and build your own GTK apps with prebuilt dependencies.">
+  <title>Sailfish GNOME — GTK apps, on Sailfish</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="releases.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap masthead">
+    <a class="brand" href="./" aria-label="Sailfish GNOME home"><img src="mark.svg" width="34" height="34" alt="">Sailfish <strong>GNOME</strong></a>
+    <nav aria-label="Main navigation"><a href="#packages">Packages</a><a href="#developers">Developers</a><a href="#parla">Parla</a><a href="https://github.com/trufae/sailfishos-gnome">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> An open toolkit for Sailfish OS</p>
+        <h1 id="hero-title">GTK apps.<br>Sailfish devices.<br><span>A shared stack.</span></h1>
+        <p class="lead">Bring GTK4 and libadwaita to your phone. Reusable libraries for Parla and the next wave of native Sailfish apps.</p>
+        <div class="actions"><a class="button primary" href="#packages">Explore the packages <span aria-hidden="true">↓</span></a><a class="text-link" href="#parla">Meet Parla <span aria-hidden="true">↗</span></a></div>
+        <p class="target">Built for <strong>Sailfish OS 5.1.0.11</strong> <span> / </span> aarch64</p>
+      </div>
+      <div class="stack-art" aria-label="Apps share GTK4 and libadwaita, built on Sailfish system libraries">
+        <div class="art-label">LESS REBUILDING. MORE MAKING.</div>
+        <div class="stack-layer apps"><img src="parla.svg" width="46" height="46" alt=""><div><strong>Parla &amp; your apps</strong><span>Build what makes them yours</span></div><span class="layer-number">03</span></div>
+        <div class="stack-layer toolkit"><span class="layer-icon" aria-hidden="true">✳</span><div><strong>GTK4 + libadwaita</strong><span>One shared runtime</span></div><span class="layer-number">02</span></div>
+        <div class="stack-layer system"><span class="layer-icon sail" aria-hidden="true">◩</span><div><strong>Sailfish OS</strong><span>GLib · Cairo · Pango · Wayland</span></div><span class="layer-number">01</span></div>
+        <div class="art-footer"><span>Native RPM packages</span><span>Runtime + development</span></div>
+      </div>
+    </section>
+
+    <section class="band" id="packages" aria-labelledby="packages-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">01 / The building blocks</p><h2 id="packages-title">Download once.<br>Use across your apps.</h2></div><p>We package the libraries missing from Sailfish. The system libraries already on your device stay part of the stack.</p></div>
+      <div class="package-grid">
+        <article class="package-card"><span class="package-kind">FOR YOUR PHONE</span><h3>Runtime</h3><code>sailfish-gnome</code><p>GTK4, libadwaita and their missing dependencies. Install it once alongside the apps that use it.</p><a href="#downloads">Runtime downloads <span aria-hidden="true">↗</span></a></article>
+        <article class="package-card"><span class="package-kind">FOR YOUR SDK</span><h3>Development</h3><code>sailfish-gnome-devel</code><p>Headers, pkg-config files and Vala bindings. Compile your app against the matching runtime.</p><a href="#developers">Build with the SDK <span aria-hidden="true">↗</span></a></article>
+        <article class="package-card source-card"><span class="package-kind">OPEN FROM THE START</span><h3>Sources</h3><code>Recipe + source archives</code><p>Pinned upstream sources, build scripts, license texts and checksums ship with each release.</p><a href="https://github.com/trufae/sailfishos-gnome">Explore the source <span aria-hidden="true">↗</span></a></article>
+      </div>
+      <div class="downloads" id="downloads"><div><h3>Release downloads</h3><p id="release-status" role="status">The first shared package release is being prepared.</p><ul id="release-assets" class="asset-list"></ul></div><a class="button outline" href="https://github.com/trufae/sailfishos-gnome/releases">All releases <span aria-hidden="true">↗</span></a></div>
+      <details class="versions"><summary>What’s in the stack?</summary><div class="table-scroll"><table><caption>Initial package versions</caption><thead><tr><th scope="col">Library</th><th scope="col">Version</th><th scope="col">Purpose</th></tr></thead><tbody><tr><td>GTK</td><td>4.14.5</td><td>Wayland widgets and rendering</td></tr><tr><td>libadwaita</td><td>1.5.8</td><td>Adaptive application widgets</td></tr><tr><td>Graphene</td><td>1.10.8</td><td>Graphics mathematics</td></tr><tr><td>libepoxy</td><td>1.5.10</td><td>OpenGL function dispatch</td></tr><tr><td>AppStream</td><td>1.0.3</td><td>Application metadata</td></tr><tr><td>libxmlb</td><td>0.3.22</td><td>Binary XML</td></tr><tr><td>WebP GdkPixbuf loader</td><td>0.2.7</td><td>Images and stickers</td></tr></tbody></table></div><p>Sass is used only during the library build. GLib, Cairo, Pango, HarfBuzz, GdkPixbuf, Wayland and other available libraries come from Sailfish OS.</p></details>
+    </div></section>
+
+    <section class="wrap parla-section" id="parla" aria-labelledby="parla-title">
+      <div class="parla-copy"><p class="eyebrow">02 / Made with this stack</p><img class="parla-icon" src="parla.svg" width="68" height="68" alt=""><h2 id="parla-title">Say hello<br>with Parla.</h2><p class="lead">A native Delta Chat client built with Vala, GTK4 and libadwaita. Encrypted conversations over email, with an interface that adapts to your screen.</p><div class="actions"><a class="button primary" href="https://github.com/trufae/parla/releases">Get Parla <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/trufae/parla">About the project</a></div><p class="small">Available for Linux, macOS, Windows and Sailfish OS. See each release for packages and installation instructions.</p></div>
+      <figure class="parla-preview"><img src="parla-overview.png" width="669" height="425" loading="lazy" alt="Parla desktop window with contacts, saved messages and the conversation area"><figcaption>Parla on the desktop. The Sailfish build adapts to phone screens.</figcaption></figure>
+    </section>
+
+    <section class="band" id="developers" aria-labelledby="developers-title"><div class="wrap developer-grid">
+      <div><p class="eyebrow">03 / For app developers</p><h2 id="developers-title">Your app builds.<br>The stack is ready.</h2><p class="lead">Download the runtime and development RPMs into your SDK project’s <code>RPMS/</code> directory. Let mb2 install them as build dependencies.</p><p>Add these to your app’s RPM spec:</p><pre><code>BuildRequires: sailfish-gnome-devel &gt;= 0.1.0
+Requires: sailfish-gnome &gt;= 0.1.0</code></pre></div>
+      <div class="terminal-panel"><div class="terminal-heading"><span class="dot"></span> Sailfish Platform SDK</div><pre><code><span class="comment"># Runtime and -devel RPMs are in RPMS/</span>
+mb2 -t SailfishOS-5.1.0.11-aarch64 \
+    --search-output-dir build
+
+<span class="comment"># First run on a device</span>
+GDK_BACKEND=wayland \
+GSK_RENDERER=cairo your-app</code></pre><p>In CI, commit the release’s <code>sailfish-gnome.lock</code> and verify the pinned bundle hash before installing. Update it when you choose to upgrade the stack.</p><a class="text-link" href="https://github.com/trufae/sailfishos-gnome#use-in-another-app">Read the build guide <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+
+    <section class="wrap notes" aria-labelledby="notes-title"><p class="eyebrow">An evolving port</p><h2 id="notes-title">A starting point for more apps.</h2><p>The initial target is Sailfish OS 5.1.0.11 on aarch64. This is an experimental Wayland toolkit port; WebKitGTK, introspection typelibs and a full GNOME desktop are outside this first package set. On-screen keyboard and GPU integration need testing on real devices.</p><a class="text-link" href="https://github.com/trufae/sailfishos-gnome/issues">Share a device report or contribute <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="./"><img src="mark.svg" width="28" height="28" alt="">Sailfish <strong>GNOME</strong></a><p>A community project for apps that travel further.</p><a href="https://github.com/trufae/sailfishos-gnome">Source &amp; licenses <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
