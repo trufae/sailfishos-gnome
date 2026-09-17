@@ -101,3 +101,10 @@ Do not commit RPM blobs to Git or put them in the Pages deployment.
 Existing releases are never overwritten. Website-only changes do not
 build packages. Package recipes, pinned sources, bindings and smoke-test
 changes do. Keep matching source downloads available with binaries.
+
+To retry publishing without recompiling, run **Publish packages** with a
+successful **Packages** build run ID (or leave it blank to select the last
+completed main run). The publisher requires a successful build from this
+repository and verifies that its package sources still match `main`.
+`BUILDINFO.json` records the exact build commit. Partial uploads stay draft;
+published assets are never replaced.
