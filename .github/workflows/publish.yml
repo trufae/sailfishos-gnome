@@ -1,0 +1,36 @@
+name: Publish packages
+on:
+  # Publisher maintenance can retry the last successful package build.
+  push:
+    branches: [main]
+    paths: ['.github/publish-release.sh', '.github/workflows/publish.yml']
+  workflow_dispatch:
+    inputs:
+      build_run_id:
+        description: 'Successful Packages build run ID (blank selects the latest completed main run)'
+        type: string
+        required: false
+  workflow_call:
+    inputs:
+      build_run_id:
+        type: string
+        required: true
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: package-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Verify the build and publish its release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BUILD_RUN_ID: ${{ inputs.build_run_id }}
+        run: bash .github/publish-release.sh
